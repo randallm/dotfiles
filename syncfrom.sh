@@ -14,6 +14,7 @@ cp .vimrc ~/.vimrc
 
 echo "Setting up X init..."
 cp .xinitrc ~/.xinitrc
+chmod 755 ~/.xinitrc
 
 echo "Setting up X display..."
 cp .Xresources ~/.Xresources
