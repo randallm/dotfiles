@@ -39,3 +39,6 @@ Xft.rgba: rgb
 
 Xcursor.theme: Vanilla-DMZ
 Xcursor.size: 16
+
+XTerm*faceName: Droid Sans Mono
+XTerm*faceSize: 10

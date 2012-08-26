@@ -156,11 +156,8 @@ floating_layout = layout.Floating()
 
 mouse = [
     # pop tile
-    Drag(["mod1"], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
+    Drag(["mod1"], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     # resize float
-    Drag(["mod1"], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
+    Drag(["mod1"], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     # show float
-    Click(["mod1"], "Button2", lazy.window.bring_to_front()),
-]
+    Click(["mod1"], "Button2", lazy.window.bring_to_front()), ]
