@@ -36,3 +36,6 @@ Xft.rgba: rgb
 !white
 *color7:    #ccccc6
 *color15:   #f8f8f2
+
+Xcursor.theme: Vanilla-DMZ
+Xcursor.size: 16
