@@ -22,5 +22,8 @@ cp .Xresources ~/.Xresources
 echo "Setting up Sublime Text 2..."
 cp -r sublime-text-2/ ~/.config/sublime-text-2/
 
+echo "Setting up QTile..."
+cp -r qtile/ ~/.config/qtile/
+
 echo ""
 echo "All done!"

@@ -1,0 +1,11 @@
+{
+	"auto_upgrade_last_run": 1345942983,
+	"installed_packages":
+	[
+		"Djaneiro",
+		"Package Control",
+		"Pretty JSON",
+		"SublimeLinter",
+		"ZenCoding"
+	]
+}
