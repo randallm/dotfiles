@@ -1,4 +1,5 @@
 *.pyc
 License.sublime_license
 *.sublime_session
-/Backup
+sublime-text-2/Backup/
+sublime-text-2/Settings/

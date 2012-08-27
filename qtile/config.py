@@ -1,6 +1,7 @@
 ﻿from libqtile import bar, hook, layout, widget
 from libqtile.command import lazy
 from libqtile.manager import Drag, Click, Group, Key, Screen
+import socket
 
 
 ##-> Theme + widget options
@@ -9,11 +10,20 @@ class Theme(object):
         'size': 24,
         'background': '15181a',
         }
-    widget = {
-        'font': 'Droid Sans',
-        'fontsize': 11,
-        'background': bar['background'],
-        'foreground': 'eeeeee',
+
+    if socket.gethostname() == 'skynet':
+        widget = {
+            'font': 'Droid Sans',
+            'fontsize': 11,
+            'background': bar['background'],
+            'foreground': 'eeeeee',
+         }
+    else:
+        widget = {
+            'font': 'Droid Sans',
+            'fontsize': 13,
+            'background': bar['background'],
+            'foreground': 'eeeeee',
         }
     graph = {
         'background': '000000',
@@ -39,8 +49,9 @@ class Theme(object):
 
     systray = widget.copy()
     systray.update({
-        'icon_size': 16,
-        'padding': 3,
+        'background': bar['background'],
+        'icon_size': 24,
+        'padding': 0,
         })
 
 keys = [
@@ -53,11 +64,11 @@ keys = [
         lazy.layout.up()
     ),
     Key(
-        ["mod4", "control"], "k",
+        ["mod4", "shift"], "k",
         lazy.layout.shuffle_down()
     ),
     Key(
-        ["mod4", "control"], "j",
+        ["mod4", "shift"], "j",
         lazy.layout.shuffle_up()
     ),
     Key(
@@ -72,17 +83,41 @@ keys = [
         ["mod4", "shift"], "Return",
         lazy.layout.toggle_split()
     ),
+
+    Key(
+        ["mod4", "shift"], "Tab",
+        lazy.layout.client_to_next()
+    ),
+
+    Key(["mod4"], "m",      lazy.window.toggle_minimize()),
+    Key(["mod4"], "n",      lazy.window.disable_minimize()),
+
     Key(["mod4"], "h",      lazy.to_screen(1)),
     Key(["mod4"], "l",      lazy.to_screen(0)),
     Key(["mod4"], "Return", lazy.spawn("xterm")),
     Key(["mod4"], "d",      lazy.spawn("dmenu_run -b")),
     Key(["mod4"], "Tab",    lazy.nextlayout()),
+
     Key(["mod4"], "q",      lazy.window.kill()),
     Key(["mod4", "shift"], "q", lazy.window.kill()),
 
     Key(["mod4", "control"], "r", lazy.restart()),
 
     Key(["mod4"], "f",      lazy.window.toggle_fullscreen()),
+
+    Key(["mod4"], "t",      lazy.window.toggle_floating()),
+
+    Key(["mod4"], "Left",   lazy.window.move_floating(-35, 0)),
+    Key(["mod4"], "Right",  lazy.window.move_floating(35, 0)),
+    Key(["mod4", "control"], "Left",    lazy.window.move_floating(-960, 0)),  # 1920 / 2
+    Key(["mod4", "control"], "Right",   lazy.window.move_floating(960, 0)),
+    Key(["mod4"], "Up",     lazy.window.move_floating(0, -35)),
+    Key(["mod4"], "Down",   lazy.window.move_floating(0, 35)),
+
+    Key(["mod4", "shift"], "Left",  lazy.window.resize_floating(-35, 0)),
+    Key(["mod4", "shift"], "Right",  lazy.window.resize_floating(35, 0)),
+    Key(["mod4", "shift"], "Up",  lazy.window.resize_floating(0, -35)),
+    Key(["mod4", "shift"], "Down",  lazy.window.resize_floating(0, 35)),
 
 ]
 
@@ -106,61 +141,86 @@ layouts = [
     layout.Stack(stacks=2)
 ]
 
-#@hook.subscribe.startup
-#def runner():
-#    import subprocess
-#    subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
-#    subprocess.Popen(['bitlbee'])
-
-
 ##-> Screens
-screens = [
-    Screen(
-        top=bar.Bar(widgets=[
-            widget.GroupBox(**Theme.groupbox),
-            widget.WindowName(**Theme.widget),
+if socket.gethostname() == 'manbearpig':
+    screens = [
+        Screen(
+            top=bar.Bar(widgets=[
+                widget.GroupBox(**Theme.groupbox),
+                widget.WindowName(**Theme.widget),
 
-            widget.CPUGraph(graph_color='18BAEB', fill_color='1667EB.3', **Theme.graph),
-            widget.MemoryGraph(graph_color='00FE81', fill_color='00B25B.3', **Theme.graph),
-            widget.NetGraph(graph_color='ffff00', fill_color='4d4d00', interface='wlan0', **Theme.graph),
+                widget.CPUGraph(graph_color='18BAEB', fill_color='1667EB.3', **Theme.graph),
+                widget.MemoryGraph(graph_color='00FE81', fill_color='00B25B.3', **Theme.graph),
+                widget.NetGraph(graph_color='ffff00', fill_color='4d4d00',
+                    interface='eth0', **Theme.graph),
 
-            widget.CurrentLayout(**Theme.widget),
-            widget.Systray(**Theme.systray),
-            widget.Sep(**Theme.sep),
-            widget.Clock(fmt='%a %d %b %I:%M %p', **Theme.widget),
-            ], **Theme.bar),
-    ),
-]
+                widget.CurrentLayout(**Theme.widget),
+                widget.Systray(**Theme.systray),
+                widget.Sep(**Theme.sep),
+                widget.Clock(fmt='%a %d %b %I:%M %p', **Theme.widget),
+                ], **Theme.bar),
+        ),
+    ]
+else:
+    screens = [
+        Screen(
+            top=bar.Bar(widgets=[
+                widget.GroupBox(**Theme.groupbox),
+                widget.WindowName(**Theme.widget),
 
+                widget.CPUGraph(graph_color='18BAEB', fill_color='1667EB.3', **Theme.graph),
+                widget.MemoryGraph(graph_color='00FE81', fill_color='00B25B.3', **Theme.graph),
+                widget.NetGraph(graph_color='ffff00', fill_color='4d4d00',
+                    interface='wlan0', **Theme.graph),
 
-# screens = [
-#     Screen(
-#         bottom = bar.Bar(
-#                     [
-#                         widget.GroupBox(),
-#                         widget.WindowName(),
-#                         widget.TextBox("default", "default config"),
-#                         widget.Systray(),
-#                         widget.Clock('%Y-%m-%d %a %I:%M %p'),
-#                     ],
-#                     30,
-#                 ),
-#     ),
-# ]
+                widget.CurrentLayout(**Theme.widget),
+                widget.Systray(**Theme.systray),
+                widget.Sep(**Theme.sep),
+                widget.Clock(fmt='%a %d %b %I:%M %p', **Theme.widget),
+                ], **Theme.bar),
+        ),
+    ]
 
 main = None
 follow_mouse_focus = True
 cursor_warp = False
 floating_layout = layout.Floating()
-# mouse = ()
 
-mouse = [
-    # pop tile
-    Drag(["mod1"], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    # resize float
-    Drag(["mod1"], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
-    # show float
-    Click(["mod1"], "Button2", lazy.window.bring_to_front()),
-]
+#mouse = [
+#    # pop tile
+#    Drag(["mod1"], "Button1", lazy.window.set_position_floating(),
+#         start=lazy.window.get_position()),
+#    # resize float
+#    Drag(["mod1"], "Button3", lazy.window.set_size_floating(),
+#         start=lazy.window.get_size()),
+#    # show float
+#    Click(["mod1"], "Button2", lazy.window.bring_to_front()),
+#]
+
+floating_layout = layout.floating.Floating(float_rules=[{'wmclass': x} for x in (
+    'Xephyr',
+    'wine',
+    'winecfg',
+    'orage',
+    'Dorado.exe',
+    'winmine.exe',
+    'hl2.exe',
+    'steam.exe',
+    'dota.exe',
+    'csgo.exe',
+    'left4dead2.exe',
+    )])
+
+
+@hook.subscribe.client_new
+def floating_dialogs(window):
+    dialog = window.window.get_wm_type() == 'dialog'
+    transient = window.window.get_wm_transient_for()
+    if dialog or transient:
+        window.floating = True
+
+
+@hook.subscribe.startup
+def runner():
+    import subprocess
+    subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])

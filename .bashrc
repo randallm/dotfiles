@@ -7,7 +7,7 @@
 
 alias ls='ls --color=auto'
 
-alias calc='ipython2 -ic "from __future__ import division; from math import *; from random import *"'
+alias calc='ipython -ic "from __future__ import division; from math import *; from random import *"'
 
 export WINEDEBUG=-all
 export EDITOR="vim"
