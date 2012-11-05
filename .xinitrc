@@ -16,6 +16,14 @@ test `hostname` == 'skynet' && xfce4-power-manager && xbacklight -set 100
 xrdb ~/.Xresources &
 redshiftgui &
 volumeicon &
-dropboxd &
+deluged &
 
-exec ck-launch-session dbus-launch qtile
+#dropboxd &
+#(sleep 10; conky -q) &
+
+#tint2 &
+xfce4-panel &
+(sleep 3; gnome-do) & # built in autostart doesn't work
+
+test `hostname` == 'skynet' && exec dbus-launch qtile # laptop
+exec fusion-icon # everything else

@@ -1,18 +1,17 @@
 dotfiles
 ========
 
-Required
---------
+Personal configuration files for my Linux rigs.
+
+Software I Use
+--------------
 
 * X11
 * Bash
 * Conky
+* Compiz
+* QTile
+* Terminator
 * Redshift + RedshiftGUI
 * VIM
 * Sublime Text 2
-
-Run
----
-
-Run `syncfrom.sh` to setup new machine/update from repo. Run `syncto.sh` to
-sync local files to repo.
