@@ -186,29 +186,22 @@ follow_mouse_focus = True
 cursor_warp = False
 floating_layout = layout.Floating()
 
-#mouse = [
-#    # pop tile
-#    Drag(["mod1"], "Button1", lazy.window.set_position_floating(),
-#         start=lazy.window.get_position()),
-#    # resize float
-#    Drag(["mod1"], "Button3", lazy.window.set_size_floating(),
-#         start=lazy.window.get_size()),
-#    # show float
-#    Click(["mod1"], "Button2", lazy.window.bring_to_front()),
-#]
+mouse = [
+    # pop tile
+    Drag(["mod1"], "Button1", lazy.window.set_position_floating(),
+         start=lazy.window.get_position()),
+    # resize float
+    Drag(["mod1"], "Button3", lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
+    # show float
+    Click(["mod1"], "Button2", lazy.window.bring_to_front()),
+]
 
 floating_layout = layout.floating.Floating(float_rules=[{'wmclass': x} for x in (
     'Xephyr',
     'wine',
     'winecfg',
     'orage',
-    'Dorado.exe',
-    'winmine.exe',
-    'hl2.exe',
-    'steam.exe',
-    'dota.exe',
-    'csgo.exe',
-    'left4dead2.exe',
     )])
 
 

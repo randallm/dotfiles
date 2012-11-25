@@ -1,19 +1,20 @@
 {
-	"auto_upgrade_last_run": 1346021833,
+	"auto_upgrade_last_run": 1353634446,
 	"installed_packages":
 	[
 		"Djaneiro",
+		"Markdown Slideshow",
 		"Package Control",
 		"SideBarEnhancements",
-		"sublime-github",
-		"SublimeCodeIntel",
 		"SublimeLinter",
+		"SublimeLove",
 		"Theme - Soda",
 		"ZenCoding"
 	],
 	"repositories":
 	[
 		"https://github.com/sublimator/ZenCoding.git",
-		"https://github.com/sublimator/ZenCoding/"
+		"https://github.com/sublimator/ZenCoding/",
+		"https://github.com/JulianEberius/Subclim"
 	]
 }

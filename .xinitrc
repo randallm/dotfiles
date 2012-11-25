@@ -18,10 +18,6 @@ redshiftgui &
 volumeicon &
 deluged &
 
-#dropboxd &
-#(sleep 10; conky -q) &
-
-#tint2 &
 xfce4-panel &
 (sleep 3; gnome-do) & # built in autostart doesn't work
 

@@ -1,0 +1,4 @@
+*.py[co]
+
+# Mac
+.DS_Store

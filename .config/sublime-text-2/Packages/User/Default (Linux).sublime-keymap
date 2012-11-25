@@ -1,4 +1,9 @@
 [
     { "keys": ["ctrl+tab"], "command": "next_view" },
-    { "keys": ["ctrl+shift+tab"], "command": "prev_view" }
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+
+    {
+        "keys": ["alt+s"], "command": "markdown_slideshow",
+        "args": {"theme": "default"}
+    }
 ]
