@@ -3,15 +3,14 @@ dotfiles
 
 Personal configuration files for my Linux rigs.
 
-Software I Use
---------------
+Software Configs Tracked
+------------------------
 
-* X11
-* Bash
-* Conky
+* Compiz WM + Emerald Window Manager + LXPanel Deskbar 
+* ZSH
+* Conky (orphaned)
 * Compiz
-* QTile
+* QTile (orphaned)
 * Terminator
-* Redshift + RedshiftGUI
 * VIM
 * Sublime Text 2
