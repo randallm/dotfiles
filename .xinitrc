@@ -11,15 +11,19 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-test `hostname` == 'skynet' && xfce4-power-manager && xbacklight -set 100
-
+# colors
 xrdb ~/.Xresources &
 redshiftgui &
+
+# tray icon for volume
 volumeicon &
-deluged &
 
-xfce4-panel &
-(sleep 3; gnome-do) & # built in autostart doesn't work
+# downloads
+lottanzb &
+transmission-qt &
 
-test `hostname` == 'skynet' && exec dbus-launch qtile # laptop
-exec fusion-icon # everything else
+pidgin &
+guake &
+lxpanel &
+
+exec fusion-icon
