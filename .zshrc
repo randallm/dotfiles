@@ -39,3 +39,7 @@ alias calc='python2 -ic "from __future__ import division; from math import *; fr
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
+
+# make delete key work
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
