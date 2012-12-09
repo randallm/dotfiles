@@ -19,7 +19,7 @@ redshiftgui &
 volumeicon &
 
 # downloads
-lottanzb &
+sabnzbd &
 transmission-qt &
 
 pidgin &
