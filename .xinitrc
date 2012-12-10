@@ -20,7 +20,7 @@ volumeicon &
 
 # downloads
 sabnzbd &
-transmission-qt &
+transmission-qt -m &
 
 pidgin &
 guake &
