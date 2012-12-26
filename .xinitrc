@@ -24,6 +24,6 @@ transmission-qt -m &
 
 pidgin &
 guake &
-lxpanel &
+adeskbar &
 
 exec fusion-icon
