@@ -1,9 +1,9 @@
 [global_config]
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  enabled_plugins = ,
 [keybindings]
-  cycle_prev = None
+  cycle_prev = <Shift><Super>Tab
   close_window = None
-  switch_to_tab_10 = <Super>0
+  switch_to_tab_10 = None
   resize_left = None
   reset_clear = None
   go_right = None
@@ -11,45 +11,49 @@
   resize_down = None
   toggle_zoom = None
   scaled_zoom = None
-  switch_to_tab_7 = <Super>7
+  switch_to_tab_7 = None
   group_all = None
-  move_tab_right = None
-  prev_tab = None
-  switch_to_tab_6 = <Super>6
+  move_tab_right = <Primary>Page_Down
+  prev_tab = <Primary>Page_Up
+  switch_to_tab_6 = None
   group_tab = None
-  switch_to_tab_4 = <Super>4
-  switch_to_tab_5 = <Super>5
-  switch_to_tab_2 = <Super>2
+  switch_to_tab_4 = None
+  switch_to_tab_5 = None
+  switch_to_tab_2 = None
   ungroup_all = None
   split_vert = None
   ungroup_tab = None
-  switch_to_tab_8 = <Super>8
-  switch_to_tab_3 = <Super>3
+  switch_to_tab_8 = None
+  switch_to_tab_3 = None
   paste = None
-  switch_to_tab_1 = <Super>1
-  go_prev = None
-  cycle_next = None
+  switch_to_tab_1 = None
+  go_prev = <Primary>Page_Down
+  cycle_next = <Super>Tab
   new_terminator = None
-  go_next = None
+  go_next = <Primary>Page_Up
   go_left = None
   hide_window = None
   reset = None
   search = None
   go_up = None
   resize_up = None
-  next_tab = None
+  next_tab = <Primary>Page_Down
   split_horiz = None
   go_down = None
   new_window = None
-  move_tab_left = None
-  switch_to_tab_9 = <Super>9
+  move_tab_left = <Primary>Page_Up
+  switch_to_tab_9 = None
   toggle_scrollbar = None
 [profiles]
   [[default]]
     use_system_font = False
+    custom_command = zsh
+    cursor_shape = ibeam
+    foreground_color = "#a0a0a0"
     font = Droid Sans Mono 10
     background_color = "#1b1d1e"
-    foreground_color = "#a0a0a0"
+    cursor_blink = False
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
