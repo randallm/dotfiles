@@ -34,6 +34,7 @@ alias ls='ls --color=auto'  # colored ls output
 alias v="amixer sset \"Master\" 15%"
 alias git="hub"
 alias calc='python2 -ic "from __future__ import division; from math import *; from random import *"'
+alias pycd='find . -name "*.pyc" -exec rm -rf {} \;'
 
 # insert sudo at beginning of line
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
