@@ -22,8 +22,13 @@ volumeicon &
 sabnzbd &
 transmission-qt -m &
 
-pidgin &
-guake &
-adeskbar &
+#gnome-do &
 
-exec fusion-icon
+#pidgin &
+guake &
+#adeskbar &
+xfce4-panel &
+
+#exec metacity
+#exec fusion-icon
+exec openbox-session

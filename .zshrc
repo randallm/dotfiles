@@ -35,6 +35,7 @@ alias v="amixer sset \"Master\" 15%"
 alias git="hub"
 alias calc='python2 -ic "from __future__ import division; from math import *; from random import *"'
 alias pycd='find . -name "*.pyc" -exec rm -rf {} \;'
+alias wth_f='cd workspace/whatsthehomework_flask/ && source bin/activate && cd src'
 
 # insert sudo at beginning of line
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
