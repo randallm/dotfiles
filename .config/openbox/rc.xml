@@ -375,7 +375,7 @@
       <mousebind action="DoubleClick" button="Left">
         <action name="ToggleMaximizeFull"/>
       </mousebind>
-      <mousebind action="Click" button="Up">
+      <!--<mousebind action="Click" button="Up">
         <action name="if">
           <shaded>no</shaded>
           <then>
@@ -394,7 +394,7 @@
             <action name="Raise"/>
           </then>
         </action>
-      </mousebind>
+      </mousebind>-->
     </context>
     <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
       <mousebind action="Press" button="Left">
