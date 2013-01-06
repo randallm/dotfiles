@@ -1,4 +1,4 @@
-#!/bin/sh
+!/bin/sh
 #
 # ~/.xinitrc
 #
@@ -15,20 +15,16 @@ fi
 xrdb ~/.Xresources &
 redshiftgui &
 
-# tray icon for volume
+# tray icons
+xfce4-power-manager &
 volumeicon &
 
 # downloads
 sabnzbd &
 transmission-qt -m &
 
-#gnome-do &
-
-#pidgin &
+# desktop setup
 guake &
-#adeskbar &
 xfce4-panel &
 
-#exec metacity
-#exec fusion-icon
 exec openbox-session
