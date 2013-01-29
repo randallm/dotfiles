@@ -1,33 +1,22 @@
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="sorin"
+COMPLETION_WAITING_DOTS="true"
+
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/android-sdk/tools:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-sdk/platform-tools:/opt/android-sdk/platform-tools
+
 # history settings
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 
-## not really sure what this does
-bindkey -e
-zstyle :compinstall filename '/home/randall/.zshrc'
-autoload -Uz compinit
-compinit
-
-# auto completion settings
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
-        'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
 # default apps
 export BROWSER="chromium"
 export EDITOR="vim"
 
-# PS1
-export PS1="[%n@%m %~]$ "
-
 # uniform look between QT and GTK
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-
-# android dev
-export PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/platform-tools
-
-# steam beta workaround
-alias steam='xdg-open steam://open/games'
 
 # binds
 alias ls='ls --color=auto'  # colored ls output
@@ -36,12 +25,3 @@ alias git="hub"
 alias calc='python2 -ic "from __future__ import division; from math import *; from random import *"'
 alias pycd='find . -name "*.pyc" -exec rm -rf {} \;'
 alias wth_f='cd workspace/whatsthehomework_flask/ && source bin/activate && cd src'
-
-# insert sudo at beginning of line
-insert_sudo () { zle beginning-of-line; zle -U "sudo " }
-zle -N insert-sudo insert_sudo
-bindkey "^[s" insert-sudo
-
-# make delete key work
-bindkey "^[[3~" delete-char
-bindkey "^[3;5~" delete-char
