@@ -8,7 +8,7 @@
       <property name="position" type="string" value="p=8;x=960;y=1067"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="24"/>
+      <property name="size" type="uint" value="23"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="7"/>
         <value type="int" value="1"/>
@@ -21,7 +21,7 @@
         <value type="int" value="5"/>
       </property>
       <property name="nrows" type="uint" value="1"/>
-      <property name="background-style" type="uint" value="1"/>
+      <property name="background-style" type="uint" value="0"/>
       <property name="background-alpha" type="uint" value="100"/>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="leave-opacity" type="uint" value="100"/>
@@ -54,15 +54,19 @@
         <value type="string" value="thunar"/>
         <value type="string" value="vlc"/>
         <value type="string" value="networkmanager applet"/>
+        <value type="string" value="clementine"/>
         <value type="string" value="guake"/>
         <value type="string" value="volumeicon"/>
         <value type="string" value="do"/>
+        <value type="string" value="steam"/>
         <value type="string" value="spotify"/>
         <value type="string" value="pidgin"/>
         <value type="string" value="redshiftgui"/>
         <value type="string" value="transmission-qt"/>
         <value type="string" value="fusion-icon"/>
+        <value type="string" value="skype"/>
         <value type="string" value="remmina remote desktop client"/>
+        <value type="string" value="opera"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
     </property>

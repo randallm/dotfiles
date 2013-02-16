@@ -52,7 +52,6 @@
     foreground_color = "#a0a0a0"
     font = Droid Sans Mono 10
     background_color = "#1b1d1e"
-    cursor_blink = False
     scrollback_infinite = True
 [layouts]
   [[default]]
