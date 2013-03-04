@@ -19,8 +19,9 @@ export EDITOR="vim"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 # binds
-alias ls='ls -F --color=auto'  # colored ls output
+alias ls='ls --color=auto'  # colored ls output
 alias v="amixer sset \"Master\" 15%"
+alias x="xcalib -invert -alter"
 alias calc='python2 -ic "from __future__ import division; from math import *; from random import *"'
 alias pycd='find . -name "*.pyc" -exec rm -rf {} \;'
 alias wth_f='cd ~/workspace/whatsthehomework_flask/ && source bin/activate && cd src'
