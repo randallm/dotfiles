@@ -12,7 +12,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 # default apps
-export BROWSER="chromium"
+export BROWSER="google-chrome"
 export EDITOR="vim"
 
 # uniform look between QT and GTK
