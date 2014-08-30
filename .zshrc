@@ -15,3 +15,13 @@ export EDITOR="vim"
 
 # binds
 alias calc='python2 -ic "from __future__ import division; from math import *; from random import *"'
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH  # for brew'd python
+export WORKON_HOME=~/Workspace
+source /usr/local/bin/virtualenvwrapper.sh
+workoncd() {
+    workon $1
+    cd $WORKON_HOME/$1
+}
+alias workon=workoncd
+alias workoff=deactivate
