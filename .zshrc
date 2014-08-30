@@ -14,5 +14,4 @@ SAVEHIST=100000
 export EDITOR="vim"
 
 # binds
-alias ls='ls --color=auto'  # colored ls output
 alias calc='python2 -ic "from __future__ import division; from math import *; from random import *"'
