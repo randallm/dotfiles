@@ -6,6 +6,6 @@ Personal configuration files for my dev boxes. There used to be a lot more in he
 Software Configs Tracked
 ------------------------
 
-* ZSH
+* ZSH (Prezto/YADR)
 * VIM
-
+* TMUX
