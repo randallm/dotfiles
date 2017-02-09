@@ -20,3 +20,6 @@ alias gst='git stash'
 alias gd='git diff'
 alias gc='git commit'
 alias ga='git add'
+
+alias ...=../..
+alias ....=cd .../..
