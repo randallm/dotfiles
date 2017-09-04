@@ -1,25 +1,19 @@
+
+
 #
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+# User configuration sourced by interactive shells
 #
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# Source zim
+if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 fi
 
-# Customize to your needs...
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
 alias g='git'
-alias gs='git status'
-alias gst='git stash'
-alias gd='git diff'
-alias gc='git commit'
 alias ga='git add'
-
-alias ...=../..
-alias ....=cd .../..
+alias gd='git diff'
+alias gpl='git pull'
+alias gr='git reset'
+alias gcp='git cherry-pick'
+alias gc='git commit'
+alias gs='git status'
