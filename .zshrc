@@ -17,3 +17,6 @@ alias gr='git reset'
 alias gcp='git cherry-pick'
 alias gc='git commit'
 alias gs='git status'
+
+export NVM_LAZY_LOAD=true
+source ~/.zsh-nvm/zsh-nvm.plugin.zsh
