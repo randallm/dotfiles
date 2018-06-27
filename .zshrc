@@ -17,6 +17,10 @@ alias gr='git reset'
 alias gcp='git cherry-pick'
 alias gc='git commit'
 alias gs='git status'
+alias gco='git checkout'
+alias gst='git stash'
+alias glog='git log'
+alias gb='git branch'
 
 export NVM_LAZY_LOAD=true
 source ~/.zsh-nvm/zsh-nvm.plugin.zsh
